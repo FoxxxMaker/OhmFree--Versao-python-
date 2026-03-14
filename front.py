@@ -7,6 +7,8 @@ app = tk.Tk()
 app.title("OhmFree")
 app.geometry("800x500")
 
+# sequencia de criação dos widgets
+
 lbl = tk.Label(app, text="Bem-vindo!")
 lbl.pack(pady=20)
 
@@ -16,19 +18,22 @@ lbl2.pack(pady=11)
 lbl3 = tk.Label(app, text="Insira a primeira cor.")
 lbl3.pack(pady=10)
 
-lista = ttk.Combobox(app, values=tuple(bk.cores.keys()))
+lista = ttk.Combobox(app, values=tuple(bk.cores.keys()), state="readonly")
 lista.pack(pady=10)
 
 lbl4 = tk.Label(app, text="Insira a segunda cor.")
 lbl4.pack(pady=10)
 
-Lista2 = ttk.Combobox(app, values=tuple(bk.cores.keys()))
+Lista2 = ttk.Combobox(app, values=tuple(bk.cores.keys()), state="readonly")
 Lista2.pack(pady=10)
 
 lbl5 = tk.Label(app, text="Insira a terceira cor.")
 lbl5.pack(pady=10)
 
-Lista3 = ttk.Combobox(app, values=tuple(bk.cores.keys()))
+Lista3 = ttk.Combobox(app, values=tuple(bk.cores.keys()), state="readonly")
 Lista3.pack(pady=10)
+
+Button = tk.Button(app, text="Calcular", command=lambda: mb.showinfo("Resultado", f"A resistência é: {bk.calcular_resistencia(lista.get(), Lista2.get(), Lista3.get())} Ω"))
+Button.pack(pady=20)
 
 app.mainloop()
