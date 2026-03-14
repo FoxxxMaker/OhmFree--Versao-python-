@@ -4,9 +4,9 @@
 
 # 1ª faixa: 1º dígito, 2ª faixa: 2º dígito, 3ª faixa: multiplicador, 4ª faixa: tolerância (opcional)
 
-def Resistor(cor1, cor2, cor3, cor4=None):
+def resistor(cor1, cor2, cor3, cor4=None):
     
-    Cores = {
+    cores = {
         "preto": 0,
         "marrom": 1,
         "vermelho": 2,
@@ -18,6 +18,8 @@ def Resistor(cor1, cor2, cor3, cor4=None):
         "cinza": 8,
         "branco": 9
     }
-
-    R = (Cores[cor1] * 10 + Cores[cor2]) * (10 ** Cores[cor3])
-    return R
+    try:
+        r = (cores[cor1] * 10 + cores[cor2]) * (10 ** cores[cor3])
+        return r
+    except KeyError:
+        raise ValueError("Cor inválida")    
