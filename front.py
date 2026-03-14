@@ -1,5 +1,7 @@
 import tkinter as tk
+from tkinter import ttk
 import tkinter.messagebox as mb
+import Back as bk
 
 app = tk.Tk()
 app.title("OhmFree")
@@ -14,6 +16,19 @@ lbl2.pack(pady=11)
 lbl3 = tk.Label(app, text="Insira a primeira cor.")
 lbl3.pack(pady=10)
 
+lista = ttk.Combobox(app, values=tuple(bk.cores.keys()))
+lista.pack(pady=10)
 
+lbl4 = tk.Label(app, text="Insira a segunda cor.")
+lbl4.pack(pady=10)
+
+Lista2 = ttk.Combobox(app, values=tuple(bk.cores.keys()))
+Lista2.pack(pady=10)
+
+lbl5 = tk.Label(app, text="Insira a terceira cor.")
+lbl5.pack(pady=10)
+
+Lista3 = ttk.Combobox(app, values=tuple(bk.cores.keys()))
+Lista3.pack(pady=10)
 
 app.mainloop()
