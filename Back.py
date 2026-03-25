@@ -25,4 +25,10 @@ def calcular_resistencia(cor1, cor2, cor3):
     multiplicador = 10 ** cores[cor3]
     
     resistencia = (valor1 * 10 + valor2) * multiplicador
+    if resistencia >= 1000:
+        resistencia = resistencia / 1000
+        return f"{resistencia} k"
+    elif resistencia >= 1000000:
+        resistencia = resistencia / 1000000
+        return f"{resistencia} M"
     return resistencia
